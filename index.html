@@ -1,399 +1,533 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbershop Riccardo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Stili personalizzati */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            margin-top: 50px;
-        }
-        .hero {
-            background-image: url('https://via.placeholder.com/1500x800'); /* Sostituisci con un'immagine reale */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-        }
-        .section-title {
-            text-align: center;
-            margin: 50px 0;
-            font-size: 2rem;
-            font-weight: 500;
-        }
-        .service-card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-        .service-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .service-card-body {
-            padding: 20px;
-        }
-        .service-card-body h5 {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        .service-card-body p {
-            font-size: 1rem;
-            color: #555;
-        }
-        .pricing-table {
-            margin: 50px 0;
-        }
-        .pricing-table .card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .pricing-table .card-body {
-            padding: 30px;
-            text-align: center;
-        }
-        .pricing-table .card-body h5 {
-            font-size: 2rem;
-            font-weight: 500;
-        }
-        .pricing-table .card-body p {
-            font-size: 1.25rem;
-            color: #555;
-        }
-        .team-member {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-        .team-member h5 {
-            font-size: 1.25rem;
-            font-weight: 500;
-        }
-        .team-member p {
-            font-size: 1rem;
-            color: #555;
-        }
-        .gallery img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .contact-form {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .contact-form button {
-            width: 100%;
-            padding: 15px;
-            background-color: #f4b400;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.25rem;
-            color: white;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #f4a300;
-        }
-        .booking-form {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .booking-form select, .booking-form input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .booking-form button {
-            width: 100%;
-            padding: 15px;
-            background-color: #f4b400;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.25rem;
-            color: white;
-            cursor: pointer;
-        }
-        .booking-form button:hover {
-            background-color: #f4a300;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinelli's Barbershop</title>
+  
+  <!-- Font e icone -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    /* Reset base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(135deg, #ffb347, #ffcc33);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "\f0c0";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 200px;
+      color: rgba(0,0,0,0.05);
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      user-select: none;
+      pointer-events: none;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #222;
+      text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+    }
+    header h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+    header a.btn {
+      background-color: #222;
+      color: #ffcc33;
+      padding: 15px 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    header a.btn:hover {
+      background-color: #ffcc33;
+      color: #222;
+    }
+
+    /* Sezioni comuni */
+    section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #ffcc33;
+      position: relative;
+      letter-spacing: 2px;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #ffcc33;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Servizi */
+    .services {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .service-card {
+      background: #1f1f1f;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      flex: 1 1 300px;
+      max-width: 320px;
+      padding: 25px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+    .service-card i {
+      font-size: 4rem;
+      color: #ffcc33;
+      margin-bottom: 15px;
+    }
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+    .service-card p {
+      color: #bbb;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Prezzi */
+    .pricing {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .price-card {
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      padding: 30px;
+      flex: 1 1 220px;
+      max-width: 240px;
+      color: #ffcc33;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+    .price-card:hover {
+      background-color: #ffcc33;
+      color: #222;
+    }
+
+    /* Team */
+    .team {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .member {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 320px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      text-align: center;
+      color: #ddd;
+      transition: transform 0.3s ease;
+    }
+    .member:hover {
+      transform: translateY(-6px);
+    }
+    .member img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #ffcc33;
+      margin-bottom: 15px;
+      object-fit: cover;
+      filter: grayscale(50%);
+      transition: filter 0.3s ease;
+    }
+    .member:hover img {
+      filter: none;
+    }
+    .member h4 {
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #ffcc33;
+      font-size: 1.4rem;
+    }
+    .member p {
+      font-size: 1rem;
+      color: #bbb;
+      line-height: 1.3;
+    }
+
+    /* Galleria semplice */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      filter: grayscale(40%);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      filter: none;
+    }
+
+    /* Contatti & prenotazione */
+    .contact-booking-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contact, .booking {
+      background: #222;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      flex: 1 1 400px;
+      color: #eee;
+    }
+
+    .contact h3, .booking h3 {
+      color: #ffcc33;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      letter-spacing: 1.2px;
+      text-align: center;
+    }
+
+    .contact p, .contact a {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #eee;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact a:hover {
+      color: #ffcc33;
+    }
+    .contact p i {
+      color: #ffcc33;
+      font-size: 1.3rem;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      background: #333;
+      color: #eee;
+      transition: background-color 0.3s ease;
+    }
+    form input:focus, form select:focus, form textarea:focus {
+      background-color: #444;
+      outline: none;
+    }
+    form textarea {
+      resize: vertical;
+    }
+    form button {
+      width: 100%;
+      background: #ffcc33;
+      border: none;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      color: #222;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255,204,51,0.7);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #e6b800;
+      color: #111;
+    }
+
+    #bookingStatus, #contactStatus {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #ffcc33;
+      text-align: center;
+      min-height: 28px;
+      margin-top: -15px;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      background-color: #181818;
+      color: #666;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .services, .pricing, .team {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-booking-container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Benvenuti al Barbershop di Riccardo</h1>
-            <p style="font-size:1.3rem; margin-top: 15px;">Tagli di capelli professionali e stile unico per ogni cliente</p>
-            <a href="#prenotazione" class="btn btn-warning btn-lg mt-4">Prenota Ora</a>
-        </div>
-    </section>
+<header>
+  <h1><i class="fa-solid fa-scissors"></i> Cinelli's Barbershop</h1>
+  <h2>Tagli di classe e stile senza compromessi</h2>
+  <a href="#prenotazione" class="btn"><i class="fa-solid fa-calendar-check"></i> Prenota Ora</a>
+</header>
 
-    <!-- Servizi -->
-    <section class="container my-5">
-        <h2 class="section-title">I Nostri Servizi</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1590080877777-80a99a546bc7?auto=format&fit=crop&w=600&q=80" alt="Taglio Classico">
-                    <div class="service-card-body">
-                        <h5>Taglio Classico</h5>
-                        <p>Taglio tradizionale con forbici o macchinetta per uno stile pulito e preciso.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1589739904533-6c09cbd0fcee?auto=format&fit=crop&w=600&q=80" alt="Barba">
-                    <div class="service-card-body">
-                        <h5>Rifinitura Barba</h5>
-                        <p>Definizione della barba con rasatura di precisione e prodotti di alta qualità.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1590080877214-1a1e93f0514e?auto=format&fit=crop&w=600&q=80" alt="Taglio moderno">
-                    <div class="service-card-body">
-                        <h5>Taglio Moderno</h5>
-                        <p>Look contemporaneo con sfumature e dettagli personalizzati.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="servizi">
+  <h2 class="section-title"><i class="fa-solid fa-cogs"></i> Servizi</h2>
+  <div class="services">
+    <div class="service-card">
+      <i class="fa-solid fa-cut"></i>
+      <h3>Taglio Classico</h3>
+      <p>Un taglio tradizionale e pulito, realizzato con tecnica e precisione per esaltare la tua immagine.</p>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-beard"></i>
+      <h3>Rifinitura Barba</h3>
+      <p>Definizione e cura della barba con prodotti di qualità e tecniche professionali.</p>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-star"></i>
+      <h3>Taglio Moderno</h3>
+      <p>Stile contemporaneo e personalizzato, con sfumature e dettagli alla moda.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Prezzi -->
-    <section class="container pricing-table">
-        <h2 class="section-title">Prezzi</h2>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5>Taglio Classico</h5>
-                        <p>€15</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5>Rifinitura Barba</h5>
-                        <p>€10</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5>Taglio Moderno</h5>
-                        <p>€20</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="prezzi">
+  <h2 class="section-title"><i class="fa-solid fa-tags"></i> Prezzi</h2>
+  <div class="pricing">
+    <div class="price-card">Taglio Classico<br> <span style="font-size:1.8rem;">€15</span></div>
+    <div class="price-card">Rifinitura Barba<br> <span style="font-size:1.8rem;">€10</span></div>
+    <div class="price-card">Taglio Moderno<br> <span style="font-size:1.8rem;">€20</span></div>
+  </div>
+</section>
 
-    <!-- Team -->
-    <section class="container my-5">
-        <h2 class="section-title">Il Team</h2>
-        <div class="row">
-            <div class="col-md-6 team-member">
-                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=150&q=80" alt="Riccardo">
-                <h5>Riccardo</h5>
-                <p>Il nostro barbiere esperto, appassionato e creativo, pronto a realizzare ogni tuo desiderio.</p>
-            </div>
-            <div class="col-md-6 team-member">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Assistente">
-                <h5>Matteo</h5>
-                <p>Responsabile delle prenotazioni e supporto clienti, sempre pronto ad aiutarti.</p>
-            </div>
-        </div>
-    </section>
+<section id="team">
+  <h2 class="section-title"><i class="fa-solid fa-users"></i> Il Team</h2>
+  <div class="team">
+    <div class="member">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80" alt="Riccardo Cinelli" />
+      <h4>Riccardo Cinelli</h4>
+      <p>Barbiere professionista con 15 anni di esperienza, maestro nell’arte del taglio e della barba.</p>
+    </div>
+    <div class="member">
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=150&q=80" alt="Assistente Matteo" />
+      <h4>Matteo Rossi</h4>
+      <p>Responsabile prenotazioni e assistenza clienti, sempre pronto a trovare il momento perfetto per te.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Galleria -->
-    <section class="container my-5">
-        <h2 class="section-title">Galleria</h2>
-        <div class="row g-3 gallery">
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1590073245297-f09872d9e462?auto=format&fit=crop&w=400&q=80" alt="Salone 1" class="rounded">
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1590073245651-fcda4bba8525?auto=format&fit=crop&w=400&q=80" alt="Salone 2" class="rounded">
-            </div>
-            <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1590073245106-9c8e849a6ae3?auto=format&fit=crop&w=400&q=80" alt="Salone 3" class="rounded">
-            </div>
-        </div>
-    </section>
+<section id="galleria">
+  <h2 class="section-title"><i class="fa-solid fa-camera"></i> Galleria</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Taglio 1" />
+    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Taglio 2" />
+    <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=400&q=80" alt="Taglio 3" />
+  </div>
+</section>
+
+<section id="contatti-prenotazione">
+  <div class="contact-booking-container">
 
     <!-- Contatti -->
-    <section class="container my-5">
-        <h2 class="section-title">Contattaci</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <input type="text" id="contactName" placeholder="Il tuo nome" required>
-                        <input type="email" id="contactEmail" placeholder="La tua email" required>
-                        <textarea id="contactMessage" placeholder="Il tuo messaggio" rows="5" required></textarea>
-                        <button type="submit">Invia Messaggio</button>
-                    </form>
-                    <div id="contactStatus" style="margin-top:15px;"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <h5>Indirizzo</h5>
-                <p>Via Barberia 123, Città, CAP</p>
-                <h5>Telefono</h5>
-                <p>+39 123 456 7890</p>
-                <h5>Email</h5>
-                <p>info@barbershopriccardo.it</p>
-                <h5>Instagram</h5>
-                <p><a href="https://instagram.com/barbershopriccardo" target="_blank">@barbershopriccardo</a></p>
-            </div>
-        </div>
-    </section>
+    <div class="contact">
+      <h3><i class="fa-solid fa-phone"></i> Contattaci</h3>
+      <p><i class="fa-solid fa-location-dot"></i> Via Barberia 123, Milano, 20100</p>
+      <p><i class="fa-solid fa-phone"></i> +39 123 456 7890</p>
+      <p><i class="fa-solid fa-envelope"></i> info@cinellisbarbershop.it</p>
+      <p><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/cinellisbarbershop" target="_blank" rel="noopener noreferrer">cinellisbarbershop</a></p>
+    </div>
 
     <!-- Prenotazione -->
-    <section class="container my-5" id="prenotazione">
-        <h2 class="section-title">Prenota il tuo Taglio</h2>
-        <div class="booking-form">
-            <form id="bookingForm">
-                <label for="name">Nome completo</label>
-                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" required>
+    <div class="booking" id="prenotazione">
+      <h3><i class="fa-solid fa-calendar-check"></i> Prenota il tuo taglio</h3>
+      <form id="bookingForm" novalidate>
+        <input type="text" id="name" name="name" placeholder="Nome completo" required />
+        <input type="email" id="email" name="email" placeholder="Email" required />
+        <input type="tel" id="phone" name="phone" placeholder="Telefono" required />
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Seleziona un servizio</option>
+          <option value="Taglio Classico">Taglio Classico</option>
+          <option value="Rifinitura Barba">Rifinitura Barba</option>
+          <option value="Taglio Moderno">Taglio Moderno</option>
+        </select>
 
-                <label for="phone">Telefono</label>
-                <input type="tel" id="phone" name="phone" placeholder="Inserisci il tuo numero di telefono" required>
+        <input type="date" id="date" name="date" min="" required />
 
-                <label for="service">Tipo di taglio</label>
-                <select id="service" name="service" required>
-                    <option value="" disabled selected>Seleziona un servizio</option>
-                    <option value="Taglio Classico">Taglio Classico</option>
-                    <option value="Rifinitura Barba">Rifinitura Barba</option>
-                    <option value="Taglio Moderno">Taglio Moderno</option>
-                </select>
+        <select id="time" name="time" required>
+          <option value="" disabled selected>Seleziona orario</option>
+          <option>09:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+        </select>
 
-                <label for="date">Data</label>
-                <input type="date" id="date" name="date" min="" required>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Prenota Ora</button>
 
-                <label for="time">Orario</label>
-                <select id="time" name="time" required>
-                    <option value="" disabled selected>Seleziona un orario</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00">11:00</option>
-                    <option value="12:00">12:00</option>
-                    <option value="14:00">14:00</option>
-                    <option value="15:00">15:00</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:00">17:00</option>
-                </select>
+        <div id="bookingStatus"></div>
+      </form>
+    </div>
 
-                <button type="submit">Prenota Ora</button>
-            </form>
-            <div id="bookingStatus" style="margin-top:15px;"></div>
-        </div>
-    </section>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 bg-dark text-white">
-        &copy; 2025 Barbershop Riccardo. Tutti i diritti riservati.
-    </footer>
+<footer>
+  &copy; 2025 Cinelli's Barbershop. Tutti i diritti riservati. <i class="fa-solid fa-copyright"></i>
+</footer>
 
-    <!-- Script -->
-    <script>
-        // Imposta data minima per la prenotazione a oggi
-        const dateInput = document.getElementById('date');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
+<script>
+  // Setta la data minima a oggi
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
 
-        // Funzione per gestire il form di prenotazione
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+  // Gestione invio form prenotazione
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            // Prendi i valori dal form
-            const name = this.name.value.trim();
-            const email = this.email.value.trim();
-            const phone = this.phone.value.trim();
-            const service = this.service.value;
-            const date = this.date.value;
-            const time = this.time.value;
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const phone = this.phone.value.trim();
+    const service = this.service.value;
+    const date = this.date.value;
+    const time = this.time.value;
+    const status = document.getElementById('bookingStatus');
 
-            if (!name || !email || !phone || !service || !date || !time) {
-                document.getElementById('bookingStatus').textContent = "Per favore, compila tutti i campi.";
-                return;
-            }
+    if (!name || !email || !phone || !service || !date || !time) {
+      status.style.color = 'red';
+      status.textContent = 'Per favore compila tutti i campi.';
+      return;
+    }
 
-            // Costruisci l'oggetto prenotazione
-            const booking = {
-                name, email, phone, service, date, time
-            };
+    // Controlla se l'utente ha già prenotato (usiamo localStorage per simulare)
+    if (localStorage.getItem('booking')) {
+      status.style.color = 'red';
+      status.textContent = 'Hai già una prenotazione attiva. Annullala prima di fare una nuova.';
+      return;
+    }
 
-            // Qui inseriremo la funzione per inviare la prenotazione al backend (Google Apps Script)
-            // Per ora simuliamo con un messaggio di successo
+    // Salva prenotazione
+    const bookingData = { name, email, phone, service, date, time };
+    localStorage.setItem('booking', JSON.stringify(bookingData));
 
-            // Disabilita il bottone per evitare doppi invii
-            this.querySelector('button').disabled = true;
-            document.getElementById('bookingStatus').textContent = "Invio in corso...";
+    status.style.color = '#ffcc33';
+    status.textContent = `Prenotazione confermata per il ${date} alle ${time}. Grazie ${name}!`;
 
-            fetch('https://script.google.com/macros/s/IL-TUO-WEBAPP-URL/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(booking)
-            }).then(() => {
-                document.getElementById('bookingStatus').textContent = "Prenotazione inviata con successo! Ti contatteremo presto.";
-                this.reset();
-                this.querySelector('button').disabled = false;
-            }).catch(() => {
-                document.getElementById('bookingStatus').textContent = "Errore durante l'invio. Riprova più tardi.";
-                this.querySelector('button').disabled = false;
-            });
-        });
-    </script>
+    // Reset form
+    this.reset();
+  });
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  // Per la demo: bottone per annullare la prenotazione (aggiungo sotto al form)
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = 'Annulla Prenotazione';
+  cancelBtn.style.marginTop = '10px';
+  cancelBtn.style.backgroundColor = '#a00';
+  cancelBtn.style.color = '#fff';
+  cancelBtn.style.border = 'none';
+  cancelBtn.style.padding = '10px';
+  cancelBtn.style.borderRadius = '8px';
+  cancelBtn.style.cursor = 'pointer';
+
+  cancelBtn.addEventListener('click', () => {
+    if (localStorage.getItem('booking')) {
+      localStorage.removeItem('booking');
+      document.getElementById('bookingStatus').textContent = 'Prenotazione annullata.';
+      document.getElementById('bookingStatus').style.color = '#ffcc33';
+    } else {
+      alert('Non hai prenotazioni attive.');
+    }
+  });
+
+  document.querySelector('.booking form').appendChild(cancelBtn);
+</script>
+
 </body>
 </html>
