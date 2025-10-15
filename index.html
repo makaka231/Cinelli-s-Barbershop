@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Barbershop di Riccardo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="prezzi.html">Prezzi</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Benvenuto al Barbershop di Riccardo 💈</h1>
+    <p>Tagli perfetti, atmosfera giovane e accogliente</p>
+    <a href="#prenota" class="btn">Prenota ora</a>
+  </header>
+
+  <section class="welcome">
+    <h2>Chi siamo</h2>
+    <p>Siamo un barbershop giovane e dinamico gestito da Riccardo, con la passione per i tagli freschi e moderni. Vieni a trovarci per un'esperienza unica!</p>
+  </section>
+
+  <section id="prenota" class="prenotazione">
+    <h2>Prenota un appuntamento</h2>
+    <form id="formPrenotazione">
+      <label for="nome">Il tuo nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="orario">Orario desiderato:</label>
+      <input type="datetime-local" id="orario" name="orario" required>
+
+      <label for="servizio">Tipo di taglio:</label>
+      <input type="text" id="servizio" name="servizio" required>
+
+      <button type="submit">Prenota</button>
+    </form>
+    <p id="risposta"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Barbershop di Riccardo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
