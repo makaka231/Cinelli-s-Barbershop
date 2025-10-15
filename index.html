@@ -1,188 +1,399 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Barbershop Riccardo</title>
-  <style>
-    /* Reset base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: #f7f4f0;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #222;
-      color: #f9c74f;
-      padding: 20px 10%;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    nav {
-      background: #f9c74f;
-      padding: 10px 10%;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      font-weight: bold;
-    }
-    nav a {
-      color: #222;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #d97706;
-    }
-    main {
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 0 10px;
-    }
-    section {
-      margin-bottom: 40px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h2 {
-      margin-bottom: 15px;
-      color: #222;
-      border-bottom: 3px solid #f9c74f;
-      padding-bottom: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px 10%;
-      background: #222;
-      color: #f9c74f;
-      margin-top: 50px;
-      font-size: 0.9rem;
-    }
-    /* Form prenotazione */
-    form label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #444;
-    }
-    form input, form select {
-      width: 100%;
-      padding: 8px 10px;
-      margin-bottom: 15px;
-      border: 1.5px solid #ddd;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-    form input:focus, form select:focus {
-      border-color: #f9c74f;
-      outline: none;
-    }
-    form button {
-      background: #f9c74f;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    form button:hover {
-      background: #d97706;
-      color: white;
-    }
-    #risposta {
-      margin-top: 10px;
-      font-weight: bold;
-      min-height: 24px;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-      header, footer {
-        padding: 15px 5%;
-      }
-      main {
-        margin: 20px auto;
-        padding: 0 5%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbershop Riccardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Stili personalizzati */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin-top: 50px;
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x800'); /* Sostituisci con un'immagine reale */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .section-title {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .service-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card-body {
+            padding: 20px;
+        }
+        .service-card-body h5 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .service-card-body p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .pricing-table {
+            margin: 50px 0;
+        }
+        .pricing-table .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-table .card-body {
+            padding: 30px;
+            text-align: center;
+        }
+        .pricing-table .card-body h5 {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .pricing-table .card-body p {
+            font-size: 1.25rem;
+            color: #555;
+        }
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .team-member h5 {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .contact-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #f4b400;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            color: white;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #f4a300;
+        }
+        .booking-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .booking-form select, .booking-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .booking-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #f4b400;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            color: white;
+            cursor: pointer;
+        }
+        .booking-form button:hover {
+            background-color: #f4a300;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    BARBERSHOP RICCARDO
-  </header>
-  <nav>
-    <a href="#info">Info</a>
-    <a href="#prezzi">Prezzi</a>
-    <a href="#contatti">Contatti</a>
-    <a href="#prenota">Prenota</a>
-  </nav>
-  <main>
-    <section id="info">
-      <h2>Benvenuti nel Barbershop di Riccardo</h2>
-      <p>Il nostro barbershop è il posto perfetto per un taglio professionale e uno stile unico. Ambiente accogliente, staff qualificato e attenzione ai dettagli. Vieni a trovarci e rilassati con un taglio o una rasatura di qualità!</p>
-    </section>
-    <section id="prezzi">
-      <h2>Prezzi</h2>
-      <ul>
-        <li>Taglio uomo: €15</li>
-        <li>Barba: €10</li>
-        <li>Taglio + barba: €22</li>
-        <li>Rasatura classica: €12</li>
-      </ul>
-    </section>
-    <section id="contatti">
-      <h2>Contatti</h2>
-      <p>📍 Via Roma 123, Milano</p>
-      <p>📞 Telefono: <a href="tel:+390123456789">+39 012 345 6789</a></p>
-      <p>✉️ Email: <a href="mailto:info@barbershopriccardo.it">info@barbershopriccardo.it</a></p>
-      <p>📸 Instagram: <a href="https://www.instagram.com/barbershopriccardo" target="_blank" rel="noopener">barbershopriccardo</a></p>
-    </section>
-    <section id="prenota">
-      <h2>Prenota un appuntamento</h2>
-      <form id="formPrenotazione">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required placeholder="Il tuo nome" />
-        
-        <label for="orario">Orario:</label>
-        <input type="time" id="orario" name="orario" required />
-        
-        <label for="servizio">Tipo di taglio:</label>
-        <select id="servizio" name="servizio" required>
-          <option value="">Seleziona...</option>
-          <option value="Taglio uomo">Taglio uomo</option>
-          <option value="Barba">Barba</option>
-          <option value="Taglio + barba">Taglio + barba</option>
-          <option value="Rasatura classica">Rasatura classica</option>
-        </select>
-        
-        <button type="submit">Prenota</button>
-        <div id="risposta"></div>
-      </form>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Barbershop Riccardo - Tutti i diritti riservati
-  </footer>
 
-  <script src="script.js"></script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Benvenuti al Barbershop di Riccardo</h1>
+            <p style="font-size:1.3rem; margin-top: 15px;">Tagli di capelli professionali e stile unico per ogni cliente</p>
+            <a href="#prenotazione" class="btn btn-warning btn-lg mt-4">Prenota Ora</a>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section class="container my-5">
+        <h2 class="section-title">I Nostri Servizi</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1590080877777-80a99a546bc7?auto=format&fit=crop&w=600&q=80" alt="Taglio Classico">
+                    <div class="service-card-body">
+                        <h5>Taglio Classico</h5>
+                        <p>Taglio tradizionale con forbici o macchinetta per uno stile pulito e preciso.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1589739904533-6c09cbd0fcee?auto=format&fit=crop&w=600&q=80" alt="Barba">
+                    <div class="service-card-body">
+                        <h5>Rifinitura Barba</h5>
+                        <p>Definizione della barba con rasatura di precisione e prodotti di alta qualità.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1590080877214-1a1e93f0514e?auto=format&fit=crop&w=600&q=80" alt="Taglio moderno">
+                    <div class="service-card-body">
+                        <h5>Taglio Moderno</h5>
+                        <p>Look contemporaneo con sfumature e dettagli personalizzati.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prezzi -->
+    <section class="container pricing-table">
+        <h2 class="section-title">Prezzi</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5>Taglio Classico</h5>
+                        <p>€15</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5>Rifinitura Barba</h5>
+                        <p>€10</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5>Taglio Moderno</h5>
+                        <p>€20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="container my-5">
+        <h2 class="section-title">Il Team</h2>
+        <div class="row">
+            <div class="col-md-6 team-member">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=150&q=80" alt="Riccardo">
+                <h5>Riccardo</h5>
+                <p>Il nostro barbiere esperto, appassionato e creativo, pronto a realizzare ogni tuo desiderio.</p>
+            </div>
+            <div class="col-md-6 team-member">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Assistente">
+                <h5>Matteo</h5>
+                <p>Responsabile delle prenotazioni e supporto clienti, sempre pronto ad aiutarti.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galleria -->
+    <section class="container my-5">
+        <h2 class="section-title">Galleria</h2>
+        <div class="row g-3 gallery">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1590073245297-f09872d9e462?auto=format&fit=crop&w=400&q=80" alt="Salone 1" class="rounded">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1590073245651-fcda4bba8525?auto=format&fit=crop&w=400&q=80" alt="Salone 2" class="rounded">
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1590073245106-9c8e849a6ae3?auto=format&fit=crop&w=400&q=80" alt="Salone 3" class="rounded">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section class="container my-5">
+        <h2 class="section-title">Contattaci</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" id="contactName" placeholder="Il tuo nome" required>
+                        <input type="email" id="contactEmail" placeholder="La tua email" required>
+                        <textarea id="contactMessage" placeholder="Il tuo messaggio" rows="5" required></textarea>
+                        <button type="submit">Invia Messaggio</button>
+                    </form>
+                    <div id="contactStatus" style="margin-top:15px;"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Indirizzo</h5>
+                <p>Via Barberia 123, Città, CAP</p>
+                <h5>Telefono</h5>
+                <p>+39 123 456 7890</p>
+                <h5>Email</h5>
+                <p>info@barbershopriccardo.it</p>
+                <h5>Instagram</h5>
+                <p><a href="https://instagram.com/barbershopriccardo" target="_blank">@barbershopriccardo</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prenotazione -->
+    <section class="container my-5" id="prenotazione">
+        <h2 class="section-title">Prenota il tuo Taglio</h2>
+        <div class="booking-form">
+            <form id="bookingForm">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required>
+
+                <label for="phone">Telefono</label>
+                <input type="tel" id="phone" name="phone" placeholder="Inserisci il tuo numero di telefono" required>
+
+                <label for="service">Tipo di taglio</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Seleziona un servizio</option>
+                    <option value="Taglio Classico">Taglio Classico</option>
+                    <option value="Rifinitura Barba">Rifinitura Barba</option>
+                    <option value="Taglio Moderno">Taglio Moderno</option>
+                </select>
+
+                <label for="date">Data</label>
+                <input type="date" id="date" name="date" min="" required>
+
+                <label for="time">Orario</label>
+                <select id="time" name="time" required>
+                    <option value="" disabled selected>Seleziona un orario</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select>
+
+                <button type="submit">Prenota Ora</button>
+            </form>
+            <div id="bookingStatus" style="margin-top:15px;"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-dark text-white">
+        &copy; 2025 Barbershop Riccardo. Tutti i diritti riservati.
+    </footer>
+
+    <!-- Script -->
+    <script>
+        // Imposta data minima per la prenotazione a oggi
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Funzione per gestire il form di prenotazione
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Prendi i valori dal form
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const phone = this.phone.value.trim();
+            const service = this.service.value;
+            const date = this.date.value;
+            const time = this.time.value;
+
+            if (!name || !email || !phone || !service || !date || !time) {
+                document.getElementById('bookingStatus').textContent = "Per favore, compila tutti i campi.";
+                return;
+            }
+
+            // Costruisci l'oggetto prenotazione
+            const booking = {
+                name, email, phone, service, date, time
+            };
+
+            // Qui inseriremo la funzione per inviare la prenotazione al backend (Google Apps Script)
+            // Per ora simuliamo con un messaggio di successo
+
+            // Disabilita il bottone per evitare doppi invii
+            this.querySelector('button').disabled = true;
+            document.getElementById('bookingStatus').textContent = "Invio in corso...";
+
+            fetch('https://script.google.com/macros/s/IL-TUO-WEBAPP-URL/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(booking)
+            }).then(() => {
+                document.getElementById('bookingStatus').textContent = "Prenotazione inviata con successo! Ti contatteremo presto.";
+                this.reset();
+                this.querySelector('button').disabled = false;
+            }).catch(() => {
+                document.getElementById('bookingStatus').textContent = "Errore durante l'invio. Riprova più tardi.";
+                this.querySelector('button').disabled = false;
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
